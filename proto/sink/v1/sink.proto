@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package sink.v1;
+
+import "google/api/annotations.proto";
+
+service SinkService {
+  rpc Sink(SinkRequest) returns (SinkResponse) {
+    option (google.api.http) = {
+      post: "/sink"
+      body: "*"
+
+    };
+  }
+
+  rpc Unsink(UnsinkRequest) returns (UnsinkResponse) {
+    option (google.api.http) = {
+      get: "/unsink"
+    };
+  }
+}
+
+message SinkRequest {
+  string url = 1;
+}
+
+message SinkResponse {
+  string url = 1;
+}
+
+message UnsinkRequest {
+  string url = 1;
+}
+
+message UnsinkResponse {
+  string url = 1;
+}

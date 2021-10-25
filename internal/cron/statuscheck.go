@@ -13,8 +13,8 @@ import (
 )
 
 const (
-	workersQtty     = 2<<7
-	httpGetTimeOut  = 20 * time.Second
+	workersQtty    = 2 << 7
+	httpGetTimeOut = 20 * time.Second
 )
 
 // LinkChecker interface for cron job
@@ -64,7 +64,7 @@ func (c *StatusChecker) CheckLinks(ctx context.Context) {
 		for updatedLink := range updatedLinks {
 			newLinks = append(newLinks, updatedLink)
 		}
-		done<- struct{}{}
+		done <- struct{}{}
 	}()
 	wg.Wait()
 	close(updatedLinks)

@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
+	// Import postgres driver
 	_ "github.com/lib/pq"
 
 	"github.com/go-sink/sink/internal/app/config"

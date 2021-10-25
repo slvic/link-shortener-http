@@ -25,7 +25,7 @@ import (
 // Server contains application dependencies.
 type Server struct {
 	httpAddr, grpcAddr string
-	allowedOrigins []string
+	allowedOrigins     []string
 	grpcServer         *grpc.Server
 	httpServer         *http.Server
 	registrar          handlers.Registrar
@@ -35,8 +35,8 @@ type Server struct {
 func InitApp(ctx context.Context, config config.Config) (*Server, error) {
 	s := &Server{
 		allowedOrigins: config.App.AllowedOrigins,
-		httpAddr: config.App.HTTPAddr,
-		grpcAddr: config.App.GRPCAddr,
+		httpAddr:       config.App.HTTPAddr,
+		grpcAddr:       config.App.GRPCAddr,
 	}
 
 	// set up database

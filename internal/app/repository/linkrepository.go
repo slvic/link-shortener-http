@@ -21,6 +21,7 @@ func NewLinkRepository(db *sql.DB) LinkRepository {
 	return LinkRepository{database: db}
 }
 
+// GetAllLinks gets all links from database
 func (r LinkRepository) GetAllLinks(ctx context.Context) ([]datastruct.Link, error) {
 	var links []datastruct.Link
 
@@ -104,6 +105,7 @@ func (r LinkRepository) UpdateLink(ctx context.Context, link datastruct.Link) er
 	return nil
 }
 
+// UpdateLinks updates several links
 func (r LinkRepository) UpdateLinks(ctx context.Context, links []datastruct.Link) error {
 	groupedLinks := make(map[int][]int64)
 	for _, link := range links {

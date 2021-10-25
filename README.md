@@ -32,7 +32,7 @@ make test
 # Run integration tests
 # Paste your connection string. 
 # If you ran docker compose up, you can copy-paste the code below.
-export DSN="user=postgres password=postgres database=postgres sslmode=disable" 
+export DSN="user=postgres password=postgres database=api sslmode=disable" 
 
 # run migrations
 GOOSE_DRIVER=postgres GOOSE_DBSTRING=$DSN make migrate
